@@ -11,6 +11,7 @@ public class TaskInfo
     private int taskId;
     private int nodeId;
     private int consumption;
+    private int status;
 
     public int getNodeId(){
         return nodeId;
@@ -21,6 +22,9 @@ public class TaskInfo
     public int getConsumption(){
         return consumption;
     }
+    public int getStatus(){
+        return status;
+    }
     public void setNodeId(int nodeId){
         this.nodeId = nodeId;
     }
@@ -29,6 +33,9 @@ public class TaskInfo
     }
     public void setConsumption(int consumption){
         this.consumption = consumption;
+    }
+    public void setStatus(int consumption){
+        this.status = status;
     }
 
     @Override

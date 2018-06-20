@@ -143,10 +143,16 @@ public class Schedule {
 
 
     public int queryTaskStatus(List<TaskInfo> tasks) {
-
-
-        // TODO 方法未实现
-        return ReturnCodeKeys.E000;
+        if (tasks == null){
+            return ReturnCodeKeys.E016;
+        }
+        for (TaskInfo taskInfo : tasks){
+            int taskId = taskInfo.getTaskId();
+            if (taskSuspendQueue.containsKey(taskId)){
+                taskInfo.setStatus(-1);
+            }
+        }
+        return ReturnCodeKeys.E015;
     }
 
 }
